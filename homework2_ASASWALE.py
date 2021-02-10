@@ -94,14 +94,10 @@ def double_cross_validation(X_tr, y_tr):
     w = np.random.rand(no_features)
     b = random.random()
         
-    # n_squig_set = np.array([50, 100, 250, 500])
-    n_squig_set = np.array([100, 500])
-    # eps_set = np.array([0.1, 0.01, 0.001, 0.0001])
-    eps_set = np.array([0.001, 0.0001])  
-    # alpha_set = np.array([0.1, 0.01, 0.001, 0.0001])
-    alpha_set = np.array([0.001, 0.0001])
-    # epochs_set = np.array([50, 100, 500, 1000])
-    epochs_set = np.array([1, 5])
+    n_squig_set = np.array([50, 100, 250, 500])
+    eps_set = np.array([0.1, 0.01, 0.001, 0.0001])
+    alpha_set = np.array([0.1, 0.01, 0.001, 0.0001])
+    epochs_set = np.array([50, 100, 500, 1000])
     
     h_star = [n_squig_set[0], eps_set[0], alpha_set[0], epochs_set[0]]
 
