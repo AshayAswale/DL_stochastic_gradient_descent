@@ -150,7 +150,14 @@ def stoch_grad_regression (X_tr, y_tr):
 
     # Randomizing the data
     random_rearrange(X_tr, y_tr, 10) #seed can be any random number
-    n_squig, eps, alpha, epochs = double_cross_validation(X_tr, y_tr)
+    # print("Enter 1 for hyperparameter tuning\nEnter 2 for training on the tuned hyperparameters")
+    value = input("Enter 1 for hyperparameter tuning\nEnter 2 for training on the tuned hyperparameters\n")
+    if value == 1:
+        print("Tuning Hyperparameters!")
+        n_squig, eps, alpha, epochs = double_cross_validation(X_tr, y_tr)
+    else:
+        print("Training using pretuned hyperparameters")
+        n_squig, eps, alpha, epochs = 50, 0.001, 0.1, 500
 
     w = np.random.rand(no_features)
     b = random.random()
